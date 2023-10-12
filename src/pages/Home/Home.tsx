@@ -1,9 +1,12 @@
 import React, { FC } from "react";
+import Header from "../../components/Header/Header";
+import Body from "../../components/Body/Body";
 
 const Home: FC = () => {
     return (
         <>
-            <p>Hallo</p>
+            <Header></Header>
+			<Body></Body>
         </>
     );
 }

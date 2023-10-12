@@ -1,0 +1,30 @@
+.AlphabetFilter {
+	background-color: #EBEBD3;
+	width: 85%;
+	padding: 0 1vw 0 0;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	border-radius: 0 10px 10px 0;
+	
+	-webkit-box-shadow: -1px -5px 4px -4px #000000; 
+	box-shadow: -1px -5px 4px -4px #000000;
+
+	transition: margin-left 0.2s;
+}
+
+.AlphabetFilter:hover {
+	background-color: #3C3C3B;
+	color: #ffffff;
+	transition: margin-left 0.2s;
+}
+
+.AlphabetFilter > p {
+	margin: 0;
+}
+
+.selectedFilter {
+	background-color: #3C3C3B;
+	color: #ffffff;
+	margin-left: 1vw;
+	transition: margin-left 0.2s;
+}

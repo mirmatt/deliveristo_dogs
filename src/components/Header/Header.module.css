@@ -1,0 +1,31 @@
+.Header {
+	background-color: #3C3C3B;
+	width: 100%;
+	display: flex;
+	font-family: "Roboto";
+	align-items: center;
+}
+
+
+.logoContainer {
+	text-align: left;
+	padding: 0 3vw;
+}
+.Logo {
+	height: 4vh;
+	fill: #ffffff;
+}
+
+.siteName {
+	flex-grow: 1;
+	color: #ffffff;
+	font-size: 2rem;
+}
+
+.userActions {
+	text-align: right;
+	padding: 0 3vw;
+}
+.UserIcon {
+	height: 3vh;
+}

@@ -1,0 +1,8 @@
+.BreedDisplay {
+	flex-grow: 1;
+}
+
+.dogImage {
+	width: auto;
+	height: 100%;
+}
