@@ -59,7 +59,7 @@ const Body: FC = () => {
     getSelectedBreed();
     return (
         <div className={styles.Body}>
-            <div className={styles.menuContainer}>
+            <div className={[styles.menuContainer, styles.letterContainer].join(" ")}>
                 {alphabetStorage.map((letter) => {
                     return (
                         <AlphabetFilter
@@ -71,7 +71,7 @@ const Body: FC = () => {
                     );
                 })}
             </div>
-            <div className={styles.menuContainer}>
+            <div className={[styles.menuContainer, styles.breedContainer].join(" ")}>
                 {selectedLetter && Object.keys(breedList).includes(selectedLetter)
                     ? breedList[selectedLetter].map((breedName) => {
                           return (

@@ -1,7 +1,7 @@
 .Body {
-	height: 80vh;
-	background-color: #6b6b60;
-	padding: 0 2vw 0 1vw;
+	height: 84.5%;
+	background-color: #c09648d7;
+	padding: 2vh 2vw 2vh 1vw;
 	display: flex;
 	font-family: "Roboto";
 }
@@ -9,8 +9,16 @@
 .menuContainer {
 	overflow: hidden;
 	overflow-x: hidden;
-	height: 100%;
+	height: auto;
 	min-width: 10%;
 	width: fit-content;
 	padding-right: 1vw;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.breedContainer {
+	min-width: 15%;
 }

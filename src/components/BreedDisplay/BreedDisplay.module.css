@@ -1,8 +1,32 @@
 .BreedDisplay {
 	flex-grow: 1;
+	position: relative;
+	width: 60%;
+}
+
+
+.rerollDoggo {
+	height: 70px;
+	width: 100%;
+	text-align: center;
+}
+
+.imageBorder {
+	overflow: auto;
+	width: 100%;
+	height: 93%;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
 .dogImage {
-	width: auto;
-	height: 100%;
+	min-width: 30%;
+	min-height: 40%;
+	max-width: 55%;
+	max-height: 55%;
+	margin: 0 auto;
+	border: 120px solid transparent;
+	border-image: url("../../icons/background_postal.png") 35% round;
 }

@@ -1,0 +1,16 @@
+.SpinnerContainer {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 2;
+}
+
+.Spinner {
+	height: 6vh;
+	fill: #ffffff;
+	user-select: none;
+}

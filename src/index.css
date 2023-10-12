@@ -4,11 +4,15 @@
 #1446A0 Cobalt
 #DB3069 Fucsia
 #F5D547 Yellow
-#EBEBD3 Beige
-#3C3C3B Onyx
+#C09648 Nocciola
+#4E270B Sandalo
  */
 @import url(//fonts.googleapis.com/css?family=Roboto);
-
 body {
 	margin: 0;
+	height: 100vh;
+}
+
+#root {
+	height: 100%;
 }
