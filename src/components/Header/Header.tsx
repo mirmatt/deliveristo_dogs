@@ -9,11 +9,11 @@ const Header: FC<HeaderProps> = () => {
     return (
         <div className={styles.Header}>
             <div className={styles.logoContainer}>
-                <a href="/"><img src={paw} className={styles.Logo}></img></a>
+                <a href="/"><img src={paw} className={styles.Logo} alt="main logo of the page"></img></a>
             </div>
             <p className={styles.siteName}>Say woof!</p>
             <div className={styles.userActions}>
-                <img src={user} className={styles.UserIcon}></img>
+                <img src={user} className={styles.UserIcon} alt="icon for user"></img>
             </div>
         </div>
     );

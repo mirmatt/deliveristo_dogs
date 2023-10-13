@@ -52,6 +52,7 @@ const BreedDisplay: FC<BreedDisplayProps> = (props) => {
                     <img
                         src={NewDoggo}
                         className={styles.rerollDoggo}
+						alt="reloading action icon"
                         onClick={() => {
                             if (props.selectedBreed) {
                                 fetchRandomDog(props.selectedBreed);
@@ -67,6 +68,7 @@ const BreedDisplay: FC<BreedDisplayProps> = (props) => {
                             }}
                             src={dogImage}
                             className={styles.dogImage}
+							alt={"image of a " + props.selectedBreed}
                         ></img>
                     </div>
                 </>

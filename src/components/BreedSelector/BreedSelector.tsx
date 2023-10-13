@@ -11,7 +11,7 @@ const BreedSelector: FC<BreedSelectorProps> = (props) => {
 	const selectorClasses:string = props.isSelected ? [styles.BreedSelector, styles.selectedFilter].join(" ") : styles.BreedSelector
 
     return (
-        <div className={selectorClasses}>
+        <div role="breedName-container" className={selectorClasses}>
 			<p onClick={():void => {
 				props.setBreed(props.breedName)
 			}}>{props.breedName.replace("_", " ")}</p>

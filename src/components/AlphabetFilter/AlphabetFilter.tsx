@@ -11,7 +11,7 @@ const AlphabetFilter: FC<AlphabetFilterProps> = (props) => {
 	const filterClasses:string = props.isSelected ? [styles.AlphabetFilter, styles.selectedFilter].join(" ") : styles.AlphabetFilter
 
     return (
-        <div className={filterClasses}>
+        <div role="letter-container" className={filterClasses}>
 			<p onClick={() => {
 				props.setLetter(props.letter)
 			}}>{props.letter}</p>
