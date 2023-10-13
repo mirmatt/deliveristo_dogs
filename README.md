@@ -1,70 +1,32 @@
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Web Application to obtain a random dog image from a list of breeds and sub-breeds
+All images and breeds are provided by https://dog.ceo/dog-api/
 
-In the project directory, you can run:
+## Initializing web-app
+- After cloning the project either run 'npm install' while in the root folder, or see the Docker section
+- Run the web app using 'npm start'. By default the app will be served on http://localhost:3000/
 
-### `npm start`
+## Building Docker Container
+- cd into the root of the folder
+- run docker build . -t "name-of-the-image" to build the image itself, docker-run "name-of-the-image" to start the container itself
+- the image while building will download automatically the required packages and it will default to http://localhost:3000/ aswell
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Building the application
+- While in the root, run "npm run build". This will create a "build" directory containing the optimized code
+- execute "serve -s .\build\" to launch the app
+- if the serve command has not been found, install it via "npm install -g serve"
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Structure of the app
+- The app all resides inside the .\src folder
+- inside it, you can find
+	- components -> contains the various React sub-components, used to assemble the page. There is an additional division between components used in structuring the page (so used as a baseline) and other components with a specific function (AlphabetFilter -> The button that act as a letter filter)
+	- data -> Holds all the static data used by the application
+	- icons -> small images destined to be used inside components as a minor part
+	- pages -> base routes for the web app
+	- utils -> composed of types (for Typescript) and functions. Used as a deposit for more complex functionality, so not to clutter the components
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Tests
+- the webapp offer tests coverage using a combination of Jest and Testing Library
+- It astracts the impletation to focus more on correct passing of data and display of the components
+- For configuration issues, the tests doesn't work via CLI, but do work via tests explorer
