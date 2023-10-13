@@ -1,64 +1,48 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import styles from "./Body.module.css";
 import alphabetStorage from "../../data/alphabet";
 import BreedSelector from "../BreedSelector/BreedSelector";
 import BreedDisplay from "../BreedDisplay/BreedDisplay";
 import AlphabetFilter from "../AlphabetFilter/AlphabetFilter";
 
-interface breedsList {
-    [keyLetter: string]: string[];
-}
+import { breedList } from "../../utils/types/dogBreeds";
+import { flattenBreeds, groupBreedsAlphabetically } from "../../utils/functions/breedDataManipulation";
+import ErrorModal from "../ErrorModal/ErrorModal";
+
 
 const Body: FC = () => {
-    const [breedList, setBreedList] = useState<breedsList>({});
+    const [breedList, setBreedList] = useState<breedList>({});
     const [selectedLetter, setLetter] = useState<string | null>(null);
     const [selectedBreed, setBreed] = useState<string | null>(null);
+	const [error, setError] = useState<string | boolean>(false);
 
-    const flattenBreeds = (breeds: breedsList): string[] => {
-        let flattened: string[] = [];
-        Object.keys(breeds).forEach((breedName: string) => {
-            if (breeds[breedName].length === 0) {
-                flattened.push(breedName.toLowerCase());
-            } else {
-                breeds[breedName].forEach((subBreed: string) => {
-                    flattened.push((breedName + "_" + subBreed).toLowerCase());
-                });
-            }
-        });
-        return flattened;
-    };
-
-    const groupBreedsAlphabetically = (breeds: string[]): breedsList => {
-        let groupedBreeds: breedsList = {
-            a: [],
-        };
-        breeds.forEach((singleBreed: string) => {
-            const breedStartingLetter = singleBreed[0];
-            if (Object.keys(groupedBreeds).includes(breedStartingLetter)) {
-                groupedBreeds[breedStartingLetter].push(singleBreed);
-            } else {
-                groupedBreeds[breedStartingLetter] = [];
-                groupedBreeds[breedStartingLetter].push(singleBreed);
-            }
-        });
-        return groupedBreeds;
-    };
+	useEffect(() => {
+		getSelectedBreed();
+	}, [])
 
     const getSelectedBreed = async (): Promise<void> => {
-        if (Object.keys(breedList).length === 0) {
-            const dogCall = await fetch("https://dog.ceo/api/breeds/list/all");
-            const dogBreeds = await dogCall.json();
-            const flattenedBreeds = flattenBreeds(dogBreeds.message);
-            const groupedBreeds = groupBreedsAlphabetically(flattenedBreeds);
-            setBreedList(groupedBreeds);
-        } else {
-            // console.log("Alredy got breed list");
-        }
+		try {
+			if (Object.keys(breedList).length === 0) {
+				const dogCall = await fetch("https://dog.ceo/api/breeds/list/all");
+				const dogBreeds = await dogCall.json();
+				if (dogBreeds.status === "success") {
+					const flattenedBreeds = flattenBreeds(dogBreeds.message);
+					const groupedBreeds = groupBreedsAlphabetically(flattenedBreeds);
+					setBreedList(groupedBreeds);
+				} else {
+					throw new Error("Unable to get dog breeds")
+				}
+			}
+		} catch (e: any) {
+			if (!error) {
+				setError(e.message)
+			}
+		}
     };
 
-    getSelectedBreed();
     return (
         <div className={styles.Body}>
+			{error ? <ErrorModal errorParam={error} setError={setError}/> : ""}
             <div className={[styles.menuContainer, styles.letterContainer].join(" ")}>
                 {alphabetStorage.map((letter) => {
                     return (

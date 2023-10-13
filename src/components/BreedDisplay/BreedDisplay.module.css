@@ -14,7 +14,7 @@
 .imageBorder {
 	overflow: auto;
 	width: 100%;
-	height: 93%;
+	height: calc(100% - 70px);
 	display: flex;
 	text-align: center;
 	justify-content: center;
@@ -29,4 +29,14 @@
 	margin: 0 auto;
 	border: 120px solid transparent;
 	border-image: url("../../icons/background_postal.png") 35% round;
+}
+
+@media screen and (max-width: 912px) {
+	.dogImage {
+		min-height: 40%;
+		max-width: 65%;
+		max-height: 55%;
+		border: 26px solid transparent;
+		border-image: url("../../icons/background_postal.png") 35% round;
+	}
 }

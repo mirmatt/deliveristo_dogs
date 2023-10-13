@@ -1,5 +1,5 @@
 .Body {
-	height: 84.5%;
+	height: calc(90% - 5.5vh);
 	background-color: #c09648d7;
 	padding: 2vh 2vw 2vh 1vw;
 	display: flex;
@@ -21,4 +21,16 @@
 
 .breedContainer {
 	min-width: 15%;
+}
+
+
+@media screen and (max-width: 912px) {
+	.menuContainer {
+		min-width: 12%;
+		padding-right: 2vw;
+		-ms-overflow-style: none;
+	}
+	.menuContainer::-webkit-scrollbar {
+		display: none;
+	}
 }

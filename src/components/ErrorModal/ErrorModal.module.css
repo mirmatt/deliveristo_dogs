@@ -1,0 +1,15 @@
+.ErrorModal {
+	position: fixed;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+.errorText {
+	font-family: "Roboto";
+	background-color: rgb(252, 46, 46);
+	padding: 1vh 4vw;
+	color: white;
+	border-radius: 10px;
+}
