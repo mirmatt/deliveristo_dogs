@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styles from "./Spinner.module.css"
-import spinnerIcon from "../../icons/3-dots-bounce.svg"
+import spinnerIcon from "../../../icons/3-dots-bounce.svg"
 
 const Spinner: FC = () => {
 	return (<div className={styles.SpinnerContainer}>

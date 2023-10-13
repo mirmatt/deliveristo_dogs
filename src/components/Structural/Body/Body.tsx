@@ -1,13 +1,13 @@
 import React, { FC, useEffect, useState } from "react";
 import styles from "./Body.module.css";
-import alphabetStorage from "../../data/alphabet";
-import BreedSelector from "../BreedSelector/BreedSelector";
-import BreedDisplay from "../BreedDisplay/BreedDisplay";
-import AlphabetFilter from "../AlphabetFilter/AlphabetFilter";
+import alphabetStorage from "../../../data/alphabet";
+import BreedSelector from "../../Functional/BreedSelector/BreedSelector";
+import BreedDisplay from "../../Functional/BreedDisplay/BreedDisplay";
+import AlphabetFilter from "../../Functional/AlphabetFilter/AlphabetFilter";
 
-import { breedList } from "../../utils/types/dogBreeds";
-import { flattenBreeds, groupBreedsAlphabetically } from "../../utils/functions/breedDataManipulation";
-import ErrorModal from "../ErrorModal/ErrorModal";
+import { breedList } from "../../../utils/types/dogBreeds";
+import { flattenBreeds, groupBreedsAlphabetically } from "../../../utils/functions/breedDataManipulation";
+import ErrorModal from "../../Functional/ErrorModal/ErrorModal";
 
 
 const Body: FC = () => {

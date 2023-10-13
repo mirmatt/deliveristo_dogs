@@ -28,7 +28,7 @@
 	max-height: 55%;
 	margin: 0 auto;
 	border: 120px solid transparent;
-	border-image: url("../../icons/background_postal.png") 35% round;
+	border-image: url("../../../icons/background_postal.png") 35% round;
 }
 
 @media screen and (max-width: 912px) {
@@ -37,6 +37,6 @@
 		max-width: 65%;
 		max-height: 55%;
 		border: 26px solid transparent;
-		border-image: url("../../icons/background_postal.png") 35% round;
+		border-image: url("../../../icons/background_postal.png") 35% round;
 	}
 }

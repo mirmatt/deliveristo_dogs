@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import styles from "./BreedDisplay.module.css";
 import Spinner from "../Spinner/Spinner";
-import NewDoggo from "../../icons/reload.svg";
+import NewDoggo from "../../../icons/reload.svg";
 
 interface BreedDisplayProps {
     selectedBreed: string | null,

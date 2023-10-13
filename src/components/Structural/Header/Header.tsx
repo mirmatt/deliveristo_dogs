@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styles from "./Header.module.css";
-import paw from "../../icons/paw-solid.svg";
-import user from "../../icons/circle-user-solid.svg";
+import paw from "../../../icons/paw-solid.svg";
+import user from "../../../icons/circle-user-solid.svg";
 
 interface HeaderProps {}
 
