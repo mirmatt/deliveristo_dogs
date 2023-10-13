@@ -4,7 +4,7 @@ import ErrorModal from "./ErrorModal";
 
 afterEach(cleanup)
 
-const mockSettingError = jest.fn((input: any):any => {
+const mockSettingError = jest.fn((input) => {
 	return input
 })
 
