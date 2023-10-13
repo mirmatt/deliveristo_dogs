@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import { expect, afterEach, it } from "@jest/globals";
 import Spinner from './Spinner';
-import spinnerIcon from "../../icons/3-dots-bounce.svg"
+import spinnerIcon from "../../../icons/3-dots-bounce.svg"
 
 afterEach(cleanup)
 

@@ -12,6 +12,7 @@ const BreedDisplay: FC<BreedDisplayProps> = (props) => {
     const [dogImage, setImages] = useState<string | null>(null);
     const [isLoading, setLoading] = useState<boolean>(false);
 
+	
     useEffect((): void => {
         if (props.selectedBreed) {
             fetchRandomDog(props.selectedBreed);

@@ -15,7 +15,9 @@ const ErrorModal: FC<ErrorModalProps> = (props) => {
             return () => {
                 clearTimeout(errorTimeout);
             };
-        }
+        } else {
+			return
+		}
     }, [props.errorParam]);
 
     return <div className={styles.ErrorModal}>

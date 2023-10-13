@@ -1,8 +1,8 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { expect, afterEach, it } from "@jest/globals";
 import Header from "./Header";
-import siteLogoImage from "../../icons/paw-solid.svg";
-import userLogoImage from "../../icons/circle-user-solid.svg";
+import siteLogoImage from "../../../icons/paw-solid.svg";
+import userLogoImage from "../../../icons/circle-user-solid.svg";
 
 afterEach(cleanup);
 

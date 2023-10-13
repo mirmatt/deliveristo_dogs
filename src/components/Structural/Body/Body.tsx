@@ -16,10 +16,6 @@ const Body: FC = () => {
     const [selectedBreed, setBreed] = useState<string | null>(null);
 	const [error, setError] = useState<string | boolean>(false);
 
-	useEffect(() => {
-		getSelectedBreed();
-	}, [])
-
     const getSelectedBreed = async (): Promise<void> => {
 		try {
 			if (Object.keys(breedList).length === 0) {
@@ -39,6 +35,10 @@ const Body: FC = () => {
 			}
 		}
     };
+
+	useEffect(() => {
+		getSelectedBreed();
+	}, [])
 
     return (
         <div className={styles.Body}>

@@ -23,12 +23,12 @@ it("Check if the breedSelector correctly sets the breedName", () => {
 
 it("Checks if the selector doesn't get selected", () => {
 	
-	const component = render(<BreedSelector breedName="abba" setBreed={mockSetBreed} isSelected={false} />)
-	expect(component.getByRole("breedName-container").classList.contains("selectedFilter")).toEqual(false)
+	render(<BreedSelector breedName="abba" setBreed={mockSetBreed} isSelected={false} />)
+	expect(screen.getByRole("breedName-container").classList.contains("selectedFilter")).toEqual(false)
 })
 
 it("Checks if the selector gets selected", () => {
 	
-	const component = render(<BreedSelector breedName="abba" setBreed={mockSetBreed} isSelected={true} />)
-	expect(component.getByRole("breedName-container").classList.contains("selectedFilter")).toEqual(true)
+	render(<BreedSelector breedName="abba" setBreed={mockSetBreed} isSelected={true} />)
+	expect(screen.getByRole("breedName-container").classList.contains("selectedFilter")).toEqual(true)
 })

@@ -4,7 +4,7 @@ import spinnerIcon from "../../../icons/3-dots-bounce.svg"
 
 const Spinner: FC = () => {
 	return (<div className={styles.SpinnerContainer}>
-		<img className={styles.Spinner} src={spinnerIcon}></img>
+		<img className={styles.Spinner} src={spinnerIcon} alt="loading spinner icon"></img>
 	</div>)
 }
 
