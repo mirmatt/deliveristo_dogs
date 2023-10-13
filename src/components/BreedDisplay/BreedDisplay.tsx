@@ -4,7 +4,8 @@ import Spinner from "../Spinner/Spinner";
 import NewDoggo from "../../icons/reload.svg";
 
 interface BreedDisplayProps {
-    selectedBreed: string | null;
+    selectedBreed: string | null,
+	setError: Function
 }
 
 const BreedDisplay: FC<BreedDisplayProps> = (props) => {
@@ -18,24 +19,29 @@ const BreedDisplay: FC<BreedDisplayProps> = (props) => {
     }, [props.selectedBreed]);
 
     const fetchRandomDog = async (breedName: string): Promise<void> => {
-        setLoading(true);
-        const breedSplit = breedName.split("_");
-        const fetchString = breedSplit.join("/");
-        const call = await fetch(`https://dog.ceo/api/breed/${fetchString}/images/random`);
-        const data = await call.json();
-        if (data.status === "success") {
-            if (dogImage !== data.message) {
-                try {
-                    const imageCheck = await fetch(data.message);
-                    if (imageCheck.status === 200) {
-                        setImages(data.message);
-                    }
-                } catch (e) {
-                    console.log(e);
-                }
-            }
-        }
-        setLoading(false);
+		try {
+			setLoading(true);
+			const breedSplit = breedName.split("_");
+			const fetchString = breedSplit.join("/");
+			const call = await fetch(`https://dog.ceo/api/breed/${fetchString}/images/random`);
+			const data = await call.json();
+			if (data.status === "success") {
+				if (dogImage !== data.message) {
+					try {
+						const imageCheck = await fetch(data.message);
+						if (imageCheck.status === 200) {
+							setImages(data.message);
+						}
+					} catch (e) {
+						throw new Error("Missing dog image")
+					}
+				}
+			}
+			setLoading(false);
+		} catch (e: any) {
+			props.setError(e.message)
+			setLoading(false);
+		}
     };
 
     return (

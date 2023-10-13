@@ -69,7 +69,7 @@ const Body: FC = () => {
                       })
                     : ""}
             </div>
-            <BreedDisplay selectedBreed={selectedBreed}></BreedDisplay>
+            <BreedDisplay selectedBreed={selectedBreed} setError={setError}></BreedDisplay>
         </div>
     );
 };
